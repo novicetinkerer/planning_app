@@ -1,3 +1,4 @@
+from datetime import date
 from data.models import Task
 
 class TaskManager:
@@ -7,5 +8,5 @@ class TaskManager:
     def add_task(self, task: Task):
         self.tasks.append(task)
 
-    def get_all_tasks(self):
-        return self.tasks
+    def get_tasks_for_date(self, query_date: date):
+        return [task for task in self.tasks if task.due_date == query_date]
