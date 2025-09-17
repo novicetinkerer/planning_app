@@ -7,9 +7,13 @@ class TaskManager:
 
     def add_task(self, task: Task):
         self.tasks.append(task)
+        print(len(self.tasks))
 
     def get_tasks_for_date(self, query_date: date):
-        return [t for t in self.tasks if t.due_date == query_date]
+        return self.tasks
+        # Temporarily returning all tasks cuz I have no idea how to deal
+        # with returning current days
+        #return [t for t in self.tasks if t.due_date == query_date]
 
     def get_all_tasks(self):
         return self.tasks

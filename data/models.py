@@ -1,10 +1,19 @@
 from datetime import date
 
 class Task:
-    def __init__(self, title: str, due_date: date, estimate_days: int, priority: str = "Medium", done: bool = False):
+    def __init__(
+            self,
+            title: str,
+            due_date: date,
+            estimate_days: int,
+            priority: str = "Medium",
+            done: bool = False
+    ):
         self.title = title
         self.due_date = due_date
-        self.estimate_days = estimate_days #estimated amount of days required to complete this task
+        # estimated amount of days
+        # required to complete this task
+        self.estimate_days = estimate_days
         self.priority = priority
         self.done = done
 
