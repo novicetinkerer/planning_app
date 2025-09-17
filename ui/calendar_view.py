@@ -104,9 +104,13 @@ class AddTaskDialog(QDialog):
         self.setLayout(layout)
 
     def validate_and_accept(self):
-        if not self.title_input.text().strip():  # title is required
+        if not self.title_input.text().strip():
             QMessageBox.warning(self, "Missing Data", "Please enter a task title.")
-            return  # don’t close dialog
+            return
+
+        if not int(self.estimate_days.value()):
+            QMessageBox.warning(self, "Missing Data", "Please enter a valid number of days.")
+            return
 
         # ✅ everything fine → close dialog
         self.accept()
